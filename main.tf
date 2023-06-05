@@ -24,3 +24,13 @@ resource "aws_instance" "app_server" {
   }
   
 }
+resource "aws_instance" "app_server2" {
+  ami = "ami-053b0d53c279acc90"
+  instance_type = "t2.micro"
+  key_name = "labsuser"
+  # user_data = "${file("init.sh")}"
+  tags = {
+    Name = "TerraformAnsiblePython"
+  }
+  
+}
